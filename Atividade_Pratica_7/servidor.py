@@ -32,13 +32,14 @@ if __name__ == '__main__':
 
     # Registra o objeto remoto no servidor Pyro5
     objeto_remoto = ClassificationServer()
-    uri = daemon.register(objeto_remoto)
+    #uri = daemon.register(objeto_remoto)
+    uri = Pyro5.api.locate_ns(host="\"3.86.82.136\"", port=9090).register(objeto_remoto)
 
     # Obtém uma referência ao Name Server
     ns = Pyro5.api.locate_ns()
 
     # Registra a URI do objeto remoto no Name Server
-    ns.register("servidor", uri) # registra o name server como servidor
+    ns.register("servidor_AP7B", uri) # registra o name server como servidor
 
     # Inicia o servidor Pyro5
     print("Servidor aguardando conexões...")

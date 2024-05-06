@@ -11,7 +11,9 @@ import json
 
 def main():
     # Conecte-se ao servidor remoto
-    uri = Pyro5.api.locate_ns().lookup("servidor")
+    #uri = Pyro5.api.locate_ns().lookup("servidor")
+    uri = Pyro5.api.locate_ns(host="\"3.86.82.136\"", port=9090).lookup("servidor")
+
     proxy = Pyro5.api.Proxy(uri)
 
     # O dataset no csv ja esta processado
