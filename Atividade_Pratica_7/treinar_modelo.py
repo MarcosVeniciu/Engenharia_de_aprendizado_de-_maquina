@@ -14,7 +14,7 @@ import numpy as np
 df = pd.read_csv("Churn_Bank.csv")
 print("Quantidade de registros: " + str(len(df)))
 
-df = df.drop("Unnamed: 0", axis=1)
+
 df = df.drop("RowNumber", axis=1) # numero da linha
 df = df.drop("CustomerId", axis=1) # id do cliente
 df = df.drop("Surname", axis=1) # Sobrenome dos clientes
